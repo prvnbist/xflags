@@ -1,0 +1,11 @@
+.project {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	color: var(--mantine-color-dark-1);
+	transition: background-color 300ms ease-in-out;
+}
+
+.project:hover {
+	background-color: var(--mantine-color-dark-5);
+}
