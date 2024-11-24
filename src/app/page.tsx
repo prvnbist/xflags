@@ -1,3 +1,3 @@
 export default function Index() {
-  return <p>xFlags</p>;
+	return <p>xFlags</p>;
 }
