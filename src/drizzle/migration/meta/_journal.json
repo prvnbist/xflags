@@ -15,6 +15,13 @@
 			"when": 1732459557401,
 			"tag": "0001_flag_environment",
 			"breakpoints": true
+		},
+		{
+			"idx": 2,
+			"version": "7",
+			"when": 1732470552340,
+			"tag": "0002_unique_flag_per_project",
+			"breakpoints": true
 		}
 	]
 }

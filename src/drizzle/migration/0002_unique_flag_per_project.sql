@@ -1,0 +1,1 @@
+ALTER TABLE "flag" ADD CONSTRAINT "flag_title_project_id_unique" UNIQUE("title","project_id");
