@@ -12,7 +12,8 @@
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
-		"indentWidth": 3
+		"indentWidth": 3,
+		"lineWidth": 120
 	},
 	"organizeImports": {
 		"enabled": true
@@ -27,7 +28,8 @@
 		"formatter": {
 			"quoteStyle": "double",
 			"indentStyle": "tab",
-			"indentWidth": 3
+			"indentWidth": 3,
+			"lineWidth": 120
 		}
 	}
 }

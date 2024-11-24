@@ -1,12 +1,5 @@
 import { relations } from "drizzle-orm";
-import {
-	boolean,
-	pgTable,
-	timestamp,
-	unique,
-	uuid,
-	varchar,
-} from "drizzle-orm/pg-core";
+import { boolean, pgTable, timestamp, unique, uuid, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
 import { flag } from "./flag";
@@ -27,16 +20,13 @@ export const flag_environment = pgTable(
 	}),
 );
 
-export const flag_environmentRelations = relations(
-	flag_environment,
-	({ one }) => ({
-		flag: one(flag, {
-			fields: [flag_environment.flag_id],
-			references: [flag.id],
-			relationName: "flag",
-		}),
+export const flag_environmentRelations = relations(flag_environment, ({ one }) => ({
+	flag: one(flag, {
+		fields: [flag_environment.flag_id],
+		references: [flag.id],
+		relationName: "flag",
 	}),
-);
+}));
 
 export const CreateFlagEnvironment = createInsertSchema(flag_environment);
 export const SelectFlagEnvironment = createSelectSchema(flag_environment);

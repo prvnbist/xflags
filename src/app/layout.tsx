@@ -4,14 +4,7 @@ import "@mantine/core/styles.css";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
-import {
-	Card,
-	ColorSchemeScript,
-	Flex,
-	MantineProvider,
-	Stack,
-	Title,
-} from "@mantine/core";
+import { Card, ColorSchemeScript, Flex, MantineProvider, Stack, Title } from "@mantine/core";
 
 import db from "drizzle";
 import theme from "theme";
