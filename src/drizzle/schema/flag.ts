@@ -1,4 +1,3 @@
-import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 import {
 	boolean,
 	pgTable,
@@ -6,6 +5,7 @@ import {
 	uuid,
 	varchar,
 } from "drizzle-orm/pg-core";
+import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
 import { project } from "./project";
 
