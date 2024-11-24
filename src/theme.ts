@@ -18,6 +18,21 @@ const theme: MantineThemeOverride = createTheme({
 		fontWeight: "400",
 		fontFamily: unbounded.style.fontFamily,
 	},
+	components: {
+		Table: Table.extend({
+			styles: {
+				th: {
+					height: "28px",
+					paddingTop: "0px",
+					paddingBottom: "0px",
+					fontSize: "12px",
+					fontWeight: "500",
+					textTransform: "uppercase",
+					color: "var(--mantine-color-dark-2)",
+				},
+			},
+		}),
+	},
 });
 
 export default theme;

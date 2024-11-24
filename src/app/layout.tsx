@@ -13,8 +13,8 @@ import {
 	Title,
 } from "@mantine/core";
 
-import theme from "theme";
 import db from "drizzle";
+import theme from "theme";
 
 const Project = dynamic(() => import("./component/project"));
 

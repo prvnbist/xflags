@@ -17,7 +17,7 @@ export default function Project({ project }: { project: IProject }) {
 			className={styles.project}
 			href={`/projects/${project.id}`}
 		>
-			<Text>{project.title}</Text>
+			<Text size="sm">{project.title}</Text>
 		</Box>
 	);
 }
