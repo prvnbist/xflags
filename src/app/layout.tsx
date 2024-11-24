@@ -1,8 +1,8 @@
 import "./layout.css";
 import "@mantine/core/styles.css";
 
-import dynamic from "next/dynamic";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 
 import {
 	Card,
