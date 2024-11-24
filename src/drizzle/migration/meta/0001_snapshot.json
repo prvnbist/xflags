@@ -1,0 +1,163 @@
+{
+	"id": "f50c208f-e636-4d66-a976-a44de6dfbfd9",
+	"prevId": "6858bf54-270b-4da7-99de-5f7e3b93960b",
+	"version": "7",
+	"dialect": "postgresql",
+	"tables": {
+		"public.flag": {
+			"name": "flag",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true,
+					"default": "gen_random_uuid()"
+				},
+				"title": {
+					"name": "title",
+					"type": "varchar(80)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"project_id": {
+					"name": "project_id",
+					"type": "uuid",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {
+				"flag_project_id_project_id_fk": {
+					"name": "flag_project_id_project_id_fk",
+					"tableFrom": "flag",
+					"tableTo": "project",
+					"columnsFrom": ["project_id"],
+					"columnsTo": ["id"],
+					"onDelete": "cascade",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.flag_environment": {
+			"name": "flag_environment",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true,
+					"default": "gen_random_uuid()"
+				},
+				"environment": {
+					"name": "environment",
+					"type": "varchar(80)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"value": {
+					"name": "value",
+					"type": "boolean",
+					"primaryKey": false,
+					"notNull": true,
+					"default": false
+				},
+				"flag_id": {
+					"name": "flag_id",
+					"type": "uuid",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {
+				"flag_environment_flag_id_flag_id_fk": {
+					"name": "flag_environment_flag_id_flag_id_fk",
+					"tableFrom": "flag_environment",
+					"tableTo": "flag",
+					"columnsFrom": ["flag_id"],
+					"columnsTo": ["id"],
+					"onDelete": "cascade",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {
+				"flag_environment_flag_id_environment_unique": {
+					"name": "flag_environment_flag_id_environment_unique",
+					"nullsNotDistinct": false,
+					"columns": ["flag_id", "environment"]
+				}
+			},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		},
+		"public.project": {
+			"name": "project",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true,
+					"default": "gen_random_uuid()"
+				},
+				"title": {
+					"name": "title",
+					"type": "varchar(80)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {},
+			"policies": {},
+			"checkConstraints": {},
+			"isRLSEnabled": false
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"sequences": {},
+	"roles": {},
+	"policies": {},
+	"views": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
+}
